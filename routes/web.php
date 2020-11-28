@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('index');
+Route::resource('order', 'OrderController');
+Route::get('orders', function(){
+    dd('llegue');
+})->name('orders.index');

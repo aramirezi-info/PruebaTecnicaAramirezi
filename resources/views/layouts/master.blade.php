@@ -12,7 +12,7 @@
     <title>@yield('title')</title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{ asset('img/core-img/favicon.ico') }}">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{{ asset('css/core-style.css') }}">
@@ -21,25 +21,6 @@
 </head>
 
 <body>
-    <!-- Search Wrapper Area Start -->
-    <div class="search-wrapper section-padding-100">
-        <div class="search-close">
-            <i class="fa fa-close" aria-hidden="true"></i>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="search-content">
-                        <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Search Wrapper Area End -->
 
     <!-- ##### Main Content Wrapper Start ##### -->
     <div class="main-content-wrapper d-flex clearfix">
@@ -48,7 +29,7 @@
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                <a href="{{route('index')}}"><img src="{{ asset('img/core-img/logo.png') }}" alt=""></a>
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
@@ -64,13 +45,13 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                <a href="{{route('index')}}"><img src="{{ asset('img/core-img/logo.png') }}" alt=""></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="shop.html">Inicio</a></li>
-                    <li><a href="checkout.html">Mis ordenes</a></li>
+                    <li class="active"><a href="{{route('index')}}">Inicio</a></li>
+                    <li><a href="{{route('orders.index')}}">Mis ordenes</a></li>
                 </ul>
             </nav>
 
@@ -84,17 +65,7 @@
         </header>
         <!-- Header Area End -->
 
-
-
-
-        <div class="amado_product_area section-padding-100">
-            <div class="container-fluid">
-
-                @yield('body')
-
-            </div>
-        </div>
-
+            @yield('body')
 
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
@@ -113,7 +84,7 @@
                 <!-- Newsletter Form -->
                 <div class="col-12 col-lg-6 col-xl-5">
                     <div class="newsletter-form mb-100">
-                        <form action="#" method="post">
+                        <form action="#" method="">
                             <input type="email" name="email" class="nl-email" placeholder="Ingresa tu correo electrónico">
                             <input type="submit" value="Suscribete">
                         </form>
@@ -133,7 +104,7 @@
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="index.html"><img src="img/core-img/logo2.png" alt=""></a>
+                            <a href="{{route('index')}}"><img src="{{ asset('img/core-img/logo2.png') }}" alt=""></a>
                         </div>
                         <!-- Copywrite Text -->
                         <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -151,10 +122,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                 <div class="collapse navbar-collapse" id="footerNavContent">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="shop.html">Inicio</a>
+                                            <a class="nav-link" href="{{route('index')}}">Inicio</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="product-details.html">Mis Ordenes</a>
+                                            <a class="nav-link" href="{{route('orders.index')}}">Mis Ordenes</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -168,15 +139,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="{{ asset('js/active.js') }}"></script>
 
 </body>
 
