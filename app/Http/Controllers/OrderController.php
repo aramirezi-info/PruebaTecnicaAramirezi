@@ -36,7 +36,7 @@ class OrderController extends Controller
         $response = $webcheckout->transaction($request, $order, $product);
 
         if ($response->isSuccessful()) {
-            $orderRepository->registerTransactionData($order, $response->requestId());
+            $orderRepository->registerTransactionData($order, $response->requestId(),  $response->processUrl());
             return redirect()->away($response->processUrl());
         }
 
@@ -66,7 +66,7 @@ class OrderController extends Controller
         $response = $webcheckout->transaction($request, $order, $order->product);
 
         if ($response->isSuccessful()) {
-            $orderRepository->registerTransactionData($order, $response->requestId());
+            $orderRepository->registerTransactionData($order, $response->requestId(), $response->processUrl());
             return redirect()->away($response->processUrl());
         }
 

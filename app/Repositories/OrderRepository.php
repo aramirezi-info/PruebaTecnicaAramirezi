@@ -22,10 +22,11 @@ class OrderRepository
         return Order::create($orderData);
     }
 
-    public function registerTransactionData(Order $order, $transaction_id )
+    public function registerTransactionData(Order $order, $transaction_id, $transaction_url )
     {
         $objOrder =  Order::find($order->id);
         $objOrder->transaction_id = $transaction_id ;
+        $objOrder->transaction_url = $transaction_url;
         $objOrder->save();
     }
 

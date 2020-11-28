@@ -12,6 +12,7 @@
                     <th scope="col">{{ trans('order.price') }}</th>
                     <th scope="col">{{ trans('order.status') }}</th>
                     <th scope="col">{{ trans('order.date') }}</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,18 @@
                         <td>${{$order->product->price}}</td>
                         <td>{{\App\Statu::$status[$order->status]}}</td>
                         <td>{{date('d-m-Y', strtotime($order->created_at))}}</td>
+                        <td>
+                            @if($order->status == 'PENDING')
+                            <a href="{{$order->transaction_url}}" title="{{ trans('order.retry') }}"  class="btn btn-info">
+                                <i class="fa fa-retweet" aria-hidden="true"></i>
+                            </button>
+                            @endif
+                            @if($order->status == 'REJECTED')
+                            <a href="{{route('order.retry',$order->id)}}" title="{{ trans('order.pay') }}" class="btn btn-success">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </button>
+                            @endif
+                        </td>
                     </tr>
                 @endforeach()
 

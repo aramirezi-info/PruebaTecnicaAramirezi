@@ -18,7 +18,7 @@ class WebChekOut {
         $this->login = $login;
         $this->tranKey = $tranKey;
     }
-    
+     
     private function connection()
     {
         return new PlacetoPay([
@@ -40,7 +40,7 @@ class WebChekOut {
         $requestPlacetopay = [
             'payment' => [
                 'reference' => $reference,
-                'description' => 'Payment order ' . $reference,
+                'description' => $product->description,
                 'amount' => [
                     'currency' => 'COP',
                     'total' => $product->price,

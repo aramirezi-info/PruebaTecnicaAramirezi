@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->integer('product_id')->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('transaction_id')->nullable();
+            $table->string('transaction_url', 2000)->nullable();
             $table->string('status', 20)->default('CREATED');
             $table->timestamps();
         });

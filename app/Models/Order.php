@@ -13,7 +13,8 @@ class Order extends Model
         'customer_mobile', 
         'customer_email',
         'product_id',
-        'transaction_id'
+        'transaction_id',
+        'transaction_url'
     ];
 
     function product(){
