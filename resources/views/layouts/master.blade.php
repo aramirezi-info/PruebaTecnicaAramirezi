@@ -51,7 +51,7 @@
             <nav class="amado-nav">
                 <ul>
                     <li class="active"><a href="{{route('index')}}">Inicio</a></li>
-                    <li><a href="{{route('orders.index')}}">Mis ordenes</a></li>
+                    <li><a href="{{route('orders.list')}}">Mis ordenes</a></li>
                 </ul>
             </nav>
 
@@ -125,7 +125,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             <a class="nav-link" href="{{route('index')}}">Inicio</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('orders.index')}}">Mis Ordenes</a>
+                                            <a class="nav-link" href="{{route('orders.list')}}">Mis Ordenes</a>
                                         </li>
                                     </ul>
                                 </div>

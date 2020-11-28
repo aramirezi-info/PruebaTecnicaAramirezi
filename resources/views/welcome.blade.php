@@ -11,7 +11,7 @@
                     <div class="single-product-wrapper">
 
                         <!-- Product Image -->
-                        <a href="{{route('order.index')}}">
+                        <a href="{{route('orderProduct', $product->id)}}">
                             <div class="product-img">
                                 <img src="{{asset($product->image)}}" alt="">
                             </div>
@@ -37,7 +37,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                 </div>
                                 <div class="cart">
-                                    <a href="{{route('order.index')}}" data-toggle="tooltip" data-placement="left" title="Añadir al carrito"><img src="{{ asset('img/core-img/cart.png') }}"></a>
+                                    <a href="{{route('orderProduct', $product->id)}}" data-toggle="tooltip" data-placement="left" title="Añadir al carrito"><img src="{{ asset('img/core-img/cart.png') }}"></a>
                                 </div>
                             </div>
                         </div>
