@@ -32,7 +32,7 @@ class OrderController extends Controller
     public function store(StoreOrderRequest $request, WebChekOut $webcheckout, OrderRepository $orderRepository,  Product $product ){
 
 
-        $order = $orderRepository->create($request->all(), $product);
+        $order = $orderRepository->create($request->all());
         $response = $webcheckout->transaction($request, $order, $product);
 
         if ($response->isSuccessful()) {
