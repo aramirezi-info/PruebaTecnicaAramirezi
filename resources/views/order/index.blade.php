@@ -36,15 +36,15 @@
                         <div class="row">
                             <div class="col-md-12 mb-3">
                                 <label for="customer_name" class="control-label required">{{ trans('order.name') }}</label>
-                                <input type="text" class="form-control" name="customer_name" id="customer_name"  value="" required>
+                                <input type="text" class="form-control" name="customer_name" id="customer_name"  value="" maxlength="80" required>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="customer_email" class="control-label required">{{ trans('order.email') }}</label>
-                                <input type="email" class="form-control" name="customer_email" id="customer_email" value="" required>
+                                <input type="email" class="form-control" name="customer_email" id="customer_email" value="" maxlength="120" required>
                             </div>
                             <div class="col-12 mb-3">
                                 <label for="customer_mobile" class="control-label required">{{ trans('order.mobile') }}</label>
-                                <input type="text" class="form-control" name="customer_mobile" id="customer_mobile" value="" required>
+                                <input type="text" class="form-control" name="customer_mobile" id="customer_mobile" value="" maxlength="40" required>
                             </div>
                         </div>
                         

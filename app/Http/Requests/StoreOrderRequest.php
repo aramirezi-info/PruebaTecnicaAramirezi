@@ -24,9 +24,9 @@ class StoreOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'customer_name' => 'required',
-            'customer_email' => 'required',
-            'customer_mobile' => 'required'
+            'customer_name' => 'required|max:80',
+            'customer_email' => 'required|email|max:120',
+            'customer_mobile' => 'required|max:40'
         ];
     }
 
@@ -39,8 +39,12 @@ class StoreOrderRequest extends FormRequest
     {
         return [
             'customer_name.required' => 'El campo :attribute es requerido',
+            'customer_name.max' => 'El campo :attribute no puede superar los :max caracteres',
+            'customer_email.email' => 'El :attribute debe ser una dirección de correo electrónico válida.',
             'customer_email.required' => 'El campo :attribute es requerido',
-            'customer_mobile.required' => 'El campo :attribute es requerido'
+            'customer_email.max' => 'El campo :attribute no puede superar los :max caracteres',
+            'customer_mobile.required' => 'El campo :attribute es requerido',
+            'customer_mobile.max' => 'El campo :attribute no puede superar los :max caracteres',
         ];
     }
 
@@ -53,8 +57,8 @@ class StoreOrderRequest extends FormRequest
     {
         return [
             'customer_name' => 'nombre',
-            'customer_email.required' => 'correo eletrónico',
-            'customer_mobile.required' => 'teléfono'
+            'customer_email' => 'correo eletrónico',
+            'customer_mobile' => 'teléfono'
         ];
     }
 }
