@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Repositories\ProductRepository;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(ProductRepository $productRepository)
     {
-        $products = Product::all();
+        $products = $productRepository->all();
 
         return view('welcome', compact('products'));
     }
+   
 }
