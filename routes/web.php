@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::resource('order', 'OrderController');
-Route::get('orders', function(){
-    dd('llegue');
-})->name('orders.index');
+Route::post('order/{product}', 'OrderController@store')->name('order.store');
+Route::get('order/{id}', 'OrderController@show')->name('order.show');
+Route::get('order/product/{product}', 'OrderController@order')->name('orderProduct');
+Route::get('/order/retry/{order}', 'OrderController@retry')->name('order.retry');
+Route::get('orders', 'OrderController@list' )->name('orders.list');
